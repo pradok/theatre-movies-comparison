@@ -12,8 +12,9 @@ import App from "./App";
 import "./index.css";
 import reportWebVitals from "./reportWebVitals";
 
+// TODO use uri via env
 const httpLink = createHttpLink({
-  uri: "http://localhost:4004/graphql",
+  uri: "http://localhost:8083/graphql",
 });
 const link = ApolloLink.from([httpLink]);
 

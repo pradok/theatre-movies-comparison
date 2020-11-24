@@ -12,7 +12,7 @@ const mocks = [
     request: {
       query: moviePrices,
       variables: {
-        id: "1",
+        id: "2488496",
       },
     },
     result: {
@@ -53,8 +53,6 @@ it("Movie prices render without error and correct prices", async () => {
       </MemoryRouter>
     </MockedProvider>
   );
-  await component.findByText("Cinemaworld");
-  await component.findByText("Filmworld");
-  await component.findByText("25");
-  await component.findByText("24.7");
+  await component.findByText("CinemaWorld: $24.7");
+  await component.findByText("Filmworld: $25");
 });

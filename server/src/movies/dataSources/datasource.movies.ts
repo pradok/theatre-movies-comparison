@@ -19,12 +19,14 @@ interface IMovie {
 export class MovieDataSource extends RESTDataSource {
   constructor() {
     super();
+    // TODO use baseURL via env
     this.baseURL = "https://challenge.lexicondigital.com.au/api";
   }
 
   willSendRequest(request: RequestOptions) {
     request.headers.set(
       "x-api-key",
+      // TODO use key via env
       "Yr2636E6BTD3UCdleMkf7UEdqKnd9n361TQL9An7"
     );
   }
