@@ -27,6 +27,7 @@ export class MovieResolver {
       )) as unknown) as Movie;
       cinemaWorld.Provider = "CinemaWorld";
       cinemaWorld.ID = id;
+      console.log({ filmWorld, cinemaWorld });
       return [filmWorld, cinemaWorld];
     } catch (error) {
       throw new ServerError("Movie price comparison");
