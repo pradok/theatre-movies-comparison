@@ -12,6 +12,7 @@ export class MovieResolver {
     @Ctx("dataSources") dataSources: { moviesApi: MovieDataSource }
   ) {
     const { moviesApi } = dataSources;
+    // TODO Needs refactoring for better mashing of data perhaps via a separate query and schema.
     try {
       const filmWorld = ((await moviesApi.getMovieById(
         id,
@@ -27,7 +28,6 @@ export class MovieResolver {
       )) as unknown) as Movie;
       cinemaWorld.Provider = "CinemaWorld";
       cinemaWorld.ID = id;
-      console.log({ filmWorld, cinemaWorld });
       return [filmWorld, cinemaWorld];
     } catch (error) {
       throw new ServerError("Movie price comparison");
