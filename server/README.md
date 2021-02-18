@@ -1,4 +1,4 @@
-# lexicon
+
 
 > An awesome project based on Ts.ED framework
 
